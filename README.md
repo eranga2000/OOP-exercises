@@ -4,7 +4,7 @@ This is an **OOP exercise** that covers the core principles of **Polymorphism**,
 
 You are developing an online banking system in **Java** to manage different types of bank accounts, such as **SavingsAccount**, **CurrentAccount**, and **FixedDepositAccount**. Each account type has specific features and rules for transactions, so you decide to create an **abstract base class** `BankAccount` with properties like `accountNumber`, `balance`, and `accountHolderName`. To protect data and ensure that only valid operations are performed, you will use **encapsulation** by setting the properties as private and providing public getter and setter methods as appropriate.
 
-## 💳 **System Features**:
+
 
 The system should allow customers to **deposit** and **withdraw** money in multiple ways, so you will overload the `deposit()` and `withdraw()` methods in `BankAccount` to support different types of transactions.
 
