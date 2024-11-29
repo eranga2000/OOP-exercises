@@ -23,7 +23,7 @@ Each subclass (`SavingsAccount`, `CurrentAccount`, and `FixedDepositAccount`) wi
 - **CurrentAccount** might allow an **overdraft feature**, where withdrawals can exceed the balance up to a certain limit.
 - **FixedDepositAccount** may restrict withdrawals altogether until the deposit term has matured.
 
-## 📊 **Interest Calculation**:
+
 
 Define an abstract method `calculateInterest()` in `BankAccount`, which each subclass will implement according to its own interest rules:
 - **SavingsAccount**: Accrues **monthly interest**.
