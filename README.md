@@ -1,66 +1,37 @@
 # 🏦 **Online Banking System in Java** 🏦
 
-This project is an Object-Oriented Programming (OOP) exercise that demonstrates the key concepts of **Polymorphism**, **Abstraction**, **Inheritance**, and **Encapsulation**. The goal is to create an online banking system that can manage various types of bank accounts, such as **SavingsAccount**, **CurrentAccount**, and **FixedDepositAccount**.
+This is an **OOP exercise** that covers the core principles of **Polymorphism**, **Abstraction**, **Inheritance**, and **Encapsulation**.
 
-## 💡 **Concepts Covered**
-- **Polymorphism**: Overloading methods (`deposit()` and `withdraw()`) to handle different types of transactions.
-- **Abstraction**: Using an abstract base class `BankAccount` to define common properties and methods.
-- **Inheritance**: Different account types (Savings, Current, Fixed Deposit) inherit from `BankAccount` and implement their specific rules.
-- **Encapsulation**: Protecting account data (like `accountNumber` and `balance`) by making them private and providing public getter and setter methods.
+You are developing an online banking system in **Java** to manage different types of bank accounts, such as **SavingsAccount**, **CurrentAccount**, and **FixedDepositAccount**. Each account type has specific features and rules for transactions, so you decide to create an **abstract base class** `BankAccount` with properties like `accountNumber`, `balance`, and `accountHolderName`. To protect data and ensure that only valid operations are performed, you will use **encapsulation** by setting the properties as private and providing public getter and setter methods as appropriate.
 
-## 🔑 **Key Features**
-- **Account Types**:  
-  - `SavingsAccount`  
-  - `CurrentAccount`  
-  - `FixedDepositAccount`
-  
-- **Deposit Methods**:  
-  - `deposit(double amount)`: Direct cash deposit  
-  - `deposit(double amount, String chequeNumber)`: Cheque deposit  
-  - `deposit(double amount, String chequeNumber, String bankName)`: Cross-bank cheque deposit
+## 💳 **System Features**:
 
-- **Withdraw Methods**:  
-  - `withdraw(double amount)`: Simple withdrawal  
-  - `withdraw(double amount, String atmLocation)`: ATM withdrawal
+The system should allow customers to **deposit** and **withdraw** money in multiple ways, so you will overload the `deposit()` and `withdraw()` methods in `BankAccount` to support different types of transactions.
 
-- **Account-Specific Rules**:  
-  - `SavingsAccount`: Monthly withdrawal limit  
-  - `CurrentAccount`: Overdraft feature (withdraw beyond balance)  
-  - `FixedDepositAccount`: No withdrawals before term maturity
+### **Deposit Methods**:
+- `deposit(double amount)`: Allows a direct cash deposit.
+- `deposit(double amount, String chequeNumber)`: Handles a cheque deposit, requiring both an amount and a cheque number.
+- `deposit(double amount, String chequeNumber, String bankName)`: Processes a cheque deposit from another bank, requiring an amount, cheque number, and the bank name.
 
-- **Interest Calculation**:  
-  - `SavingsAccount`: Monthly interest accrual  
-  - `FixedDepositAccount`: Annual compound interest  
-  - `CurrentAccount`: No interest
+### **Withdraw Methods**:
+- `withdraw(double amount)`: Allows a simple withdrawal.
+- `withdraw(double amount, String atmLocation)`: Processes an ATM withdrawal, requiring the amount and the location of the ATM.
 
-## 📚 **Classes Overview**
-### `BankAccount` (Abstract Class)
-This is the base class for all account types. It contains common properties and abstract methods for transactions and interest calculations.
+Each subclass (`SavingsAccount`, `CurrentAccount`, and `FixedDepositAccount`) will **inherit** from `BankAccount`, and each will implement specific rules for transactions:
 
-- **Properties**: 
-  - `accountNumber`
-  - `balance`
-  - `accountHolderName`
-  
-- **Methods**: 
-  - `deposit()`
-  - `withdraw()`
-  - `calculateInterest()` (abstract method)
+- **SavingsAccount** may have a **monthly withdrawal limit**, which should be enforced in the `withdraw()` method.
+- **CurrentAccount** might allow an **overdraft feature**, where withdrawals can exceed the balance up to a certain limit.
+- **FixedDepositAccount** may restrict withdrawals altogether until the deposit term has matured.
 
-### `SavingsAccount` (Subclass)
-Inherits from `BankAccount` and implements the specific rules for savings accounts, such as the monthly withdrawal limit and interest accrual.
+## 📊 **Interest Calculation**:
 
-### `CurrentAccount` (Subclass)
-Inherits from `BankAccount` and allows for overdraft transactions. It does not accrue interest.
+Define an abstract method `calculateInterest()` in `BankAccount`, which each subclass will implement according to its own interest rules:
+- **SavingsAccount**: Accrues **monthly interest**.
+- **FixedDepositAccount**: Accrues interest at a **fixed rate**, compounded annually.
+- **CurrentAccount**: Does not accrue interest.
 
-### `FixedDepositAccount` (Subclass)
-Inherits from `BankAccount` and restricts withdrawals until the deposit term has matured. It also implements fixed-rate interest calculation.
+---
 
-## 📈 **How It Works**
-Each account type inherits the common methods from `BankAccount` but overrides certain methods to enforce specific rules. For instance, the `withdraw()` method in `SavingsAccount` checks if the monthly withdrawal limit is exceeded, while `CurrentAccount` allows overdrafts.
+Hope this helps you with your project! If you have any further questions, feel free to ask. 😄
 
-## 💾 **How to Use**
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/online-banking-system.git
 
