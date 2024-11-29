@@ -1,4 +1,4 @@
-# 🏦 **Online Banking System in Java** 🏦
+
 
 This is an **OOP exercise** that covers the core principles of **Polymorphism**, **Abstraction**, **Inheritance**, and **Encapsulation**.
 
